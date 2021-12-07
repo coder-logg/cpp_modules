@@ -1,8 +1,15 @@
 #include <iostream>
 #include <string>
-#include "Phonebook.h"
+#include "Phonebook.hpp"
 #include <iomanip>
 //using namespace std;
+
+std::string check_size(std::string str)
+{
+	if (str.size() > 10)
+		return str.substr(0, 9).insert(9, ".");
+	return str;
+}
 
 void print_table(const Phonebook & ph)
 {
@@ -14,12 +21,12 @@ void print_table(const Phonebook & ph)
 	std::cout << "|" << std::setw(10) << "first name";
 	std::cout << "|" << std::setw(10) << "last name";
 	std::cout << "|" << std::setw(10) << "nickname" << "|" << std::endl;
-	for (unsigned i = 1; i <= ph.getSize(); i++)
+	for (unsigned i = 0; i < ph.getSize(); i++)
 	{
-		std::cout << "|" << std::setw(n) << i;
-		std::cout << "|" << std::setw(10) << ph.getContact(i).name;
-		std::cout << "|" << std::setw(10) << ph.getContact(i).surname;
-		std::cout << "|" << std::setw(10) << ph.getContact(i).nickname << "|" << std::endl;
+		std::cout << "|" << std::setw(n) << i + 1;
+		std::cout << "|" << std::setw(10) << check_size(ph.getContact(i).name);
+		std::cout << "|" << std::setw(10) << check_size(ph.getContact(i).surname);
+		std::cout << "|" << std::setw(10) << check_size(ph.getContact(i).nickname) << "|" << std::endl;
 	}
 }
 
@@ -31,9 +38,12 @@ int	main(int argc, char **argv)
 	Phonebook ph;
 	while (1)
 	{
+		std::cout << "Enter command: ";
 		std::cin >> str;
 		if (str == "EXIT")
 			exit(0);
+		else if (std::cin.eof())
+			break;
 		else if (str == "ADD")
 		{
 			Contact newContact;
@@ -41,12 +51,12 @@ int	main(int argc, char **argv)
 			std::cin >> newContact.name;
 			std::cout << "please enter contact's surname" << std::endl;
 			std::cin >> newContact.surname;
-			std::cout << "please enter contact's " << std::endl;
-			std::cin >> newContact.name;
 			std::cout << "please enter contact's nickname" << std::endl;
-			std::cin >> newContact.name;
+			std::cin >> newContact.nickname;
 			std::cout << "please enter contact's phone number" << std::endl;
-			std::cin >> newContact.name;
+			std::cin >> newContact.phone_number;
+			std::cout << "please enter contact's darkest secret" << std::endl;
+			std::cin >> newContact.secret;
 			ph.add_contact(newContact);
 
 		} else if (str == "SEARCH")
@@ -54,7 +64,4 @@ int	main(int argc, char **argv)
 		else
 			std::cout << "ERROR: UNKNOWN COMMAND. Please enter ADD, SEARCH or EXIT" << std::endl;
 	}
-	ph.add_contact(Contact("ashot", "ismailov", "mail"));
-	std::cout << ph.getContact(0).name << std::endl;
-	print_table(ph);
 }

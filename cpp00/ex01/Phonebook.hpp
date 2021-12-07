@@ -1,6 +1,6 @@
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
-#include "Contact.h"
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+#include "Contact.hpp"
 #include <array>
 
 class Phonebook {

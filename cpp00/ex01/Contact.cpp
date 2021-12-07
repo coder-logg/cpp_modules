@@ -1,6 +1,6 @@
 #include <string>
-#include "Phonebook.h"
-#include "Contact.h"
+#include "Phonebook.hpp"
+#include "Contact.hpp"
 
 
 Contact::Contact(const std::string name, const std::string surname,
