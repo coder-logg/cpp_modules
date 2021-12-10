@@ -1,5 +1,5 @@
 NAME	=	exec
-SRCS	=	Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
+SRCS	=	Zombie.cpp main.cpp ZombieHorde.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 FLAGS		=	-Wall -Wextra -Werror
 CC			=	c++
