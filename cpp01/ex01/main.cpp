@@ -1,11 +1,10 @@
-#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
 int main()
 {
-//	Zombie zombie1("zombie1");
-//	zombie1.announce();
-//	randomChump("Zombie2");
-//	Zombie *zombie3 = newZombie("Zombie3");
-//	zombie3->announce();
-//	delete zombie3;
+	ZombieHorde zhorde;
+	int n = 100;
+	Zombie *horde = zhorde.zombieHorde(n, "ig");
+	for (int i = 0; i < n; ++i)
+		horde[i].announce();
 }

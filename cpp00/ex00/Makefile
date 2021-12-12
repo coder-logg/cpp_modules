@@ -1,7 +1,7 @@
 NAME	=	megaphone
 SRCS	=	main.cpp
 OBJS		=	$(SRCS:.cpp=.o)
-FLAGS		=	-Wall -Wextra -Werror
+FLAGS		=	-Wall -Wextra -Werror -std=c++98
 CC			=	c++
 
 %.o: %.cpp

@@ -1,16 +1,16 @@
-NAME	=	phonebook
-SRCS	=	Phonebook.cpp Contact.cpp main.cpp
+NAME	=	exec
+SRCS	=	main.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 CC			=	c++
 
 %.o: %.cpp
-	c++ $(FLAGS) -c $(<F)
+	$(CC) $(FLAGS) -c $(<F)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	c++ -o $(NAME) $(OBJS)
+	$(CC) -o $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)

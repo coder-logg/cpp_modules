@@ -5,10 +5,7 @@
 class ZombieHorde
 {
 public:
-	static Zombie* zombieHorde( int N, std::string name );
-
-//private:
-//	ZombieHorde();
+	Zombie* zombieHorde( int N, std::string name );
 };
 
 
