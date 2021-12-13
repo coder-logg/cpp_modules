@@ -9,4 +9,7 @@ Zombie::Zombie(const std::string & name) : name(name){}
 
 Zombie::Zombie(){}
 
-void Zombie::setName(const std::string &name){this->name = name;};
+void Zombie::setName(const std::string &name){this->name = name;}
+
+Zombie::~Zombie()
+{};

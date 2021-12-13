@@ -10,6 +10,7 @@ public:
 	Zombie();
 	explicit	Zombie(const std::string & name);
 	void	setName(const std::string & name);
+	~Zombie();
 
 private:
 	std::string name;

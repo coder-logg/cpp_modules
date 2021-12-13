@@ -11,13 +11,10 @@ public:
 	void add_contact(const Contact &contact);
 	const Contact &getContact(unsigned int index) const;
 	const Contact *getContacts() const;
-
-private:
-	unsigned size;
-public:
 	unsigned int getSize() const;
 
 private:
+	unsigned size;
 	Contact contacts[8];
 	mutable unsigned count;
 };

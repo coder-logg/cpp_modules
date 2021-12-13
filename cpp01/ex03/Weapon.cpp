@@ -15,3 +15,6 @@ Weapon::Weapon(const Weapon &weapon)
 {
 	this->type = weapon.getType();
 }
+
+Weapon::~Weapon()
+{}

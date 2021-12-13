@@ -9,3 +9,9 @@ Zombie *ZombieHorde::zombieHorde(int N, std::string name)
 		horde[i].setName(name);
 	return horde;
 }
+
+ZombieHorde::ZombieHorde()
+{}
+
+ZombieHorde::~ZombieHorde()
+{}

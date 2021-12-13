@@ -9,6 +9,7 @@ private:
 
 public:
 	Weapon();
+	~Weapon();
 	Weapon(const Weapon & weapon);
 	explicit Weapon(const std::string &type);
 	const std::string &getType() const;

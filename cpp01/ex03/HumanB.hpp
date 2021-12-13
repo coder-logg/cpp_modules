@@ -9,6 +9,8 @@ public:
 	explicit HumanB(const std::string & name);
 	HumanB(const std::string & name, Weapon & weapon);
 	void setWeapon(Weapon &weapon);
+	~HumanB();
+	HumanB();
 
 private:
 	Weapon *weapon;

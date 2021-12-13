@@ -2,7 +2,6 @@
 #include <string>
 #include "Phonebook.hpp"
 #include <iomanip>
-//using namespace std;
 
 std::string check_size(std::string str)
 {

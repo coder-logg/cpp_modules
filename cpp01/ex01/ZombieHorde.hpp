@@ -5,6 +5,8 @@
 class ZombieHorde
 {
 public:
+	~ZombieHorde();
+	ZombieHorde();
 	Zombie* zombieHorde( int N, std::string name );
 };
 
