@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 	std::ifstream in(argv[1]);
 	if (!in.is_open())
 	{
-		std::cout << "Wrong path" << std::endl;
+		std::cout << "ERROR" << std::endl;
 		return 1;
 	}
 	std::ofstream out(std::string(argv[1]) + ".replace");
