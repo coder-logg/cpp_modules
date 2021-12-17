@@ -17,8 +17,5 @@ void HumanB::setWeapon(Weapon &weapon)
 HumanB::HumanB(const std::string &name, Weapon &weapon) : weapon(&weapon), name(name)
 {}
 
-HumanB::HumanB()
-{}
-
 HumanB::~HumanB()
 {}

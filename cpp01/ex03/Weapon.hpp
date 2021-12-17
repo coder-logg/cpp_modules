@@ -8,7 +8,6 @@ private:
 	std::string type;
 
 public:
-	Weapon();
 	~Weapon();
 	Weapon(const Weapon & weapon);
 	explicit Weapon(const std::string &type);

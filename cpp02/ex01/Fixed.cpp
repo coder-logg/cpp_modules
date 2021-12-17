@@ -53,7 +53,7 @@ float Fixed::toFloat() const
 
 std::ostream& operator<<(std::ostream &os, const Fixed &fx)
 {
-	return (os << (float)(((float)fx.getRawBits()) / (1 << Fixed::getFractionBits())));
+	return (os << fx.toFloat());
 }
 
 int Fixed::toInt() const
