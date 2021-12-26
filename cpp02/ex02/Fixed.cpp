@@ -42,13 +42,13 @@ bool Fixed::operator!=(const Fixed &rhs) const { return rhs.number != number; }
 
 bool Fixed::operator<(const Fixed &rhs) const { return number < rhs.number; }
 
-bool Fixed::operator>(const Fixed &rhs) const { return rhs.number > this->number; }
+bool Fixed::operator>(const Fixed &rhs) const { return rhs.number < this->number; }
 
-bool Fixed::operator<=(const Fixed &rhs) const { return rhs.number <= this->number; }
+bool Fixed::operator<=(const Fixed &rhs) const { return this->number <= rhs.number; }
 
-bool Fixed::operator>=(const Fixed &rhs) const { return rhs.number >= this->number; }
+bool Fixed::operator>=(const Fixed &rhs) const { return this->number >= rhs.number; }
 
-Fixed Fixed::operator+(const Fixed &rhs) const { return Fixed(rhs.number + number); }
+Fixed Fixed::operator+(const Fixed &rhs) const { return Fixed(toFloat() + rhs.toFloat()); }
 
 Fixed Fixed::operator*(const Fixed &rhs) const
 {
@@ -60,10 +60,10 @@ Fixed Fixed::operator*(const Fixed &rhs) const
 
 Fixed Fixed::operator/(const Fixed &rhs) const
 {
-	return Fixed((number << fraction_bits) / rhs.number);
+	return Fixed((toFloat() / rhs.toFloat()));
 }
 
-Fixed Fixed::operator-(const Fixed &rhs) const { return Fixed(rhs.number - number); }
+Fixed Fixed::operator-(const Fixed &rhs) const { return Fixed(toFloat() - rhs.toFloat()); }
 
 Fixed Fixed::max(Fixed const &n1, Fixed const &n2) { return (n1 >= n2 ? n1 : n2); }
 

@@ -9,9 +9,10 @@ void ClapTrap::setAllFields(std::string name, int hitpoints, int energyPoints, i
 	this->attackDamage = attackDamage;
 }
 
-ClapTrap::ClapTrap(const std::string &name) : name(name), className("ClapTrap"), hitpoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap(const std::string &name) : name(name), className("ClapTrap"), hitpoints(10),
+energyPoints(10), attackDamage(0)
 {
-	std::cout << className << " " << name << " created" << std::endl;
+	std::cout << className << " " << name << " created." << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
@@ -42,7 +43,8 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (hitpoints > 0)
 	{
-		std::cout  << className << " " << name << " repaired by " << amount << " health points." << std::endl;
+		std::cout  << className << " " << name << " repaired by " << amount
+			<< " health points." << std::endl;
 		hitpoints += amount;
 	}
 	else
@@ -63,9 +65,10 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 	setAllFields(other.name, other.hitpoints, other.energyPoints, other.attackDamage);
 }
 
-ClapTrap::ClapTrap() : name("Noname"), className("ClapTrap"), hitpoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap() : name("Noname"), className("ClapTrap"), hitpoints(10),
+energyPoints(10), attackDamage(0)
 {
-	std::cout << "Nameless " << className << " created" << std::endl;
+	std::cout << "Nameless " << className << " created." << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)

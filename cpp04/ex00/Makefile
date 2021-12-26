@@ -1,8 +1,8 @@
-NAME	=	./serena
-SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp
+NAME	=	./clapTrap
+SRCS	=	main.cpp Animal.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
-CC			=	clang++
+CC			=	c++
 
 %.o: %.cpp
 	$(CC) $(FLAGS) -c $(<F)

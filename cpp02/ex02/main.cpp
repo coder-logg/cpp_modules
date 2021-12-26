@@ -35,5 +35,7 @@ int main()
 	std::cout << "c > d is " << (c > d) << std::endl;
 	std::cout << "c >= d is " << (c >= d) << std::endl;
 	std::cout << "c == d is " << (c == d) << std::endl;
+	std::cout << "max(c,d) is " << Fixed::max(c,d) << std::endl;
+	std::cout << "min(c,d) is " << Fixed::min(c,d) << std::endl;
 	return 0;
 }

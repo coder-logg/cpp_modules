@@ -4,8 +4,8 @@
 ScavTrap::ScavTrap()
 {
 	className = "ScavTrap";
-	setAllFields("Noname", 100, 50, 20);
-	std::cout  << className << " " << name << " created" << std::endl;
+	setAllFields("Nameless", 100, 50, 20);
+	std::cout  << name << " " << className << " created" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string &name)

@@ -1,7 +1,7 @@
 NAME	=	./serena
-SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJS		=	$(SRCS:.cpp=.o)
-FLAGS		=	-Wall -Wextra -Werror -std=c++98
+FLAGS		=	-Wshadow -Wno-shadow -Wall -Wextra -Werror -std=c++98
 CC			=	clang++
 
 %.o: %.cpp

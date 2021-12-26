@@ -1,6 +1,4 @@
 #include "Fixed.hpp"
-#include "../ex01/Fixed.hpp"
-
 #include <iostream>
 
 Fixed::Fixed() : number(0)

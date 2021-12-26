@@ -58,7 +58,7 @@ std::ostream& operator<<(std::ostream &os, const Fixed &fx)
 
 int Fixed::toInt() const
 {
-	return (number >> fraction_bits);
+	return (number >> fraction_bits);  // 000107
 }
 
 int Fixed::getFractionBits()
