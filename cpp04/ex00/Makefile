@@ -1,5 +1,5 @@
-NAME	=	./clapTrap
-SRCS	=	main.cpp Animal.cpp
+NAME	=	./animal
+SRCS	=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 CC			=	c++
