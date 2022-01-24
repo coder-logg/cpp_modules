@@ -3,8 +3,8 @@
 
 MateriaSource::MateriaSource() : ind(0)
 {
-	for (unsigned i = 0; i < ind; i++)
-		materias[i] = 0;
+	for (unsigned i = 0; i < ARR_LEN; i++)
+		materias[i] = nullptr;
 	std::cout << "MateriaSource is created" << std::endl;
 }
 
@@ -35,7 +35,7 @@ void MateriaSource::learnMateria(AMateria *other)
 	{
 		materias[ind] = other;
 		std::cout << "Materia " << other->getType()
-			<< " was learned (put in slot " << ind++ << ")" << std::endl;
+				  << " was learned (put in slot " << ind++ << ")" << std::endl;
 	}
 	else
 		std::cout << "MateriaSource storage is full" << std::endl;
@@ -45,6 +45,7 @@ MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < ARR_LEN; i++)
 	{
-		delete materias[i];
+		if (materias[i] != nullptr)
+			delete materias[i];
 	}
 }

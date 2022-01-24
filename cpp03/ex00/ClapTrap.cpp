@@ -33,7 +33,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-	std::cout << "Copying: " << name << " to " << other.name << std::endl;
+	std::cout << "Copying: " << other.name << " to " << name << std::endl;
 
 	name = other.name;
 	hitpoints = other.hitpoints;

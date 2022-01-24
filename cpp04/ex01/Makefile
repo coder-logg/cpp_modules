@@ -7,9 +7,12 @@ CC			=	c++
 %.o: %.cpp
 	$(CC) $(FLAGS) -c $(<F)
 
+%.cpp:%.hpp
+	@touch $@
+
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(SRCS)
 	$(CC) -o $(NAME) $(OBJS)
 
 clean:

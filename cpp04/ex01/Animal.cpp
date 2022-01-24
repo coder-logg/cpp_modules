@@ -23,6 +23,8 @@ Animal::~Animal()
 	std::cout << "Was called Animal(" << _type << ") destructor" << std::endl;
 }
 
+void Animal::makeSound() const {}
+
 Animal & Animal::operator =(const Animal &other)
 {
 	_type = other.getType();

@@ -6,12 +6,12 @@
 class Brain
 {
     private:
-        std::string *ideas;
+        std::string ideas[100];
     public:
         Brain();
         ~Brain();
         Brain(const Brain &brain);
         Brain &operator=(Brain const &brain);
-        std::string *getIdeas() const;
 };
 #endif
+ /// todo исправить сегу в срр04/ex03
