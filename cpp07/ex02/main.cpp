@@ -1,35 +1,28 @@
 #include <iostream>
-#include "iter.hpp"
+#include "Array.hpp"
 
-template<typename T> void increment(T &t)
+int main ()
 {
-	t = t + 1;
-}
+	Array<int>		intArray(10);
+	Array<double>	doubleArray(10);
 
-template<typename T> void printelm(T &t)
-{
-	std::cout << t << ", ";
-}
+	for (int i = 0; i < static_cast<int>(intArray.size()); ++i)
+	{
+		intArray[i] = i;
+		doubleArray[i] = i + 0.5;
+		std::cout << intArray[i] << "  " << doubleArray[i] << std::endl;
+	}
 
-template<typename T> void printArr(T t[], size_t arrLen, std::string name)
-{
-	std::cout << name + ":	[";
-	::iter(t, arrLen, printelm);
-	std::cout << "]" << std::endl;
-}
-
-int main() {
-	char arr[11] = "abcdghefdp";
-	int b[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-
-	printArr(b, 10, "int");
-	::iter(b, 10, increment);
-	printArr(b, 10, "int");
-
-	printArr(arr, 10, "char");
-	::iter(arr, 10, increment);
-	printArr(arr, 10, "char");
+    std::cout << "--------------------" << std::endl;
+	try
+	{
+		for (int i = 0; i < static_cast<int>(intArray.size()) + 1; ++i)
+			std::cout << intArray[i] << "  " << doubleArray[i] << std::endl;
+	}
+	catch (std::exception &ex)
+	{
+		std::cout << ex.what() << std::endl;
+	}
 	return 0;
 }
-
 

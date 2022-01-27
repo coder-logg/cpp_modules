@@ -1,27 +1,37 @@
 #include <iostream>
-#include "Array.hpp"
+#include "easyfind.hpp"
+#include <vector>
 
 int main ()
 {
-	Array<int>		intArray(10);
-	Array<double>	doubleArray(10);
+	std::vector<int> l;
+	std::vector<int>::iterator it;
 
-	for (unsigned int count = 0; count < intArray.size(); ++count)
+	l.insert(l.begin(), 4);
+	l.insert(l.begin(), 4);
+	l.insert(l.begin(), 4);
+	l.insert(l.begin(), 6);
+	l.insert(l.begin(), 5);
+
+	it = easyfind(l, 5);
+
+	if (it != l.end())
+		std::cout << *it << std::endl;
+
+	std::cout << "------------" << std::endl;
+
+	while(it != l.end())
 	{
-		intArray[count] = count;
-		doubleArray[count] = count + 0.5;
-		std::cout << intArray[count] << "  " << doubleArray[count] << std::endl;
+		std::cout << *it << std::endl;
+		it++;
 	}
 
-	try
-	{
-		for (unsigned int count = 0; count < intArray.size() + 1; ++count)
-			std::cout << intArray[count] << "  " << doubleArray[count] << std::endl;
-	}
-	catch (std::exception &ex)
-	{
-		std::cout << ex.what() << std::endl;
-	}
-	return 0;
+	std::cout << "------------" << std::endl;
+
+	it = easyfind(l, 0);
+
+	if (it == l.end())
+		std::cout << "Not found element" << std::endl;
+	return (0);
 }
 

@@ -1,4 +1,4 @@
-NAME	=	./abc
+NAME	=	./templ
 SRCS	=	main.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98

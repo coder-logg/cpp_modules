@@ -1,113 +1,24 @@
-#include <string>
 #include <iostream>
-#include <cstdlib>
+#include "whatever.hpp"
 
-class Base
-{
-	public:
-	virtual ~Base(){};
-};
+int main() {
+	int a = 2;
+	int b = 3;
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+	::swap( a, b );
+    std::cout << "swap( a, b ) : a = " << a  << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 
-class A : public Base {};
-
-class B : public Base {};
-
-class C : public Base {};
-
-Base * generate()
-{
-	std::srand(std::time(nullptr)  * std::rand() * std::clock());
-	int i = std::rand() % 3;
-	if (i == 0)
-	{
-		std::cout << "Create class A : ";
-		return new A();
-	}
-	else if (i == 1)
-	{
-		std::cout << "Create class B : ";
-		return new B();
-	}
-	else if (i == 2)
-	{
-		std::cout << "Create class C : ";
-		return new C();
-	}
-	return nullptr;
-}
-
-
-void identify(Base &p)
-{
-	if ((char*)&p == nullptr)
-	{
-		std::cout << "?" << std::endl;
-		return ;
-	}
-	try
-	{
-		(void)dynamic_cast<A&>(p);
-		std::cout << "A" << std::endl;
-	}
-	catch (...){}
-	try
-	{
-		(void)dynamic_cast<B&>(p);
-		std::cout << "B" << std::endl;
-	}
-	catch (...) {}
-	try
-	{
-		(void)dynamic_cast<C&>(p);
-		std::cout << "C" << std::endl;
-	}
-	catch (...) {}
-}
-
-void identify(Base* p)
-{
-	if (dynamic_cast<A*>(p))
-		std::cout << "A" << std::endl;
-	if (dynamic_cast<B*>(p))
-		std::cout << "B" << std::endl;
-	if (dynamic_cast<C*>(p))
-		std::cout << "C" << std::endl;
-}
-
-typedef struct
-{
-	int x;
-	int y;
-	int z;
-} Data;
-
-uintptr_t serealize(Data * ptr) {
-	return (reinterpret_cast<uintptr_t>(ptr));
-}
-
-Data * deserealize(uintptr_t raw) {
-	return (reinterpret_cast<Data *>(raw));
-}
-
-int main()
-{
-	std::cout << "created | identified" << std::endl;
-	std::cout << "-----//Pointer//-----" << std::endl;
-	for (int i = 0; i < 10; i++)
-	{
-		Base *ex = generate();
-		identify(ex);
-		delete ex;
-	}
-	std::cout << "-----//Reference//-----" << std::endl;
-	for (int i = 0; i < 10; i++)
-	{
-		Base &ex = *(generate());
-		identify(ex);
-		delete &ex;
-	}
-
-	return (0);
+    std::cout << "---------------------------------------" <<std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+	::swap(c, d);
+    std::cout << "swap( c, d ) : c = " << c  << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	return 0;
 }
 
 

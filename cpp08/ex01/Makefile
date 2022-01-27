@@ -1,5 +1,5 @@
-NAME	=	./templ
-SRCS	=	main.cpp
+NAME	=	./span
+SRCS	=	main.cpp span.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 CC		=	c++
@@ -22,5 +22,8 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+debug: $(SRCS)
+	c++ -g -o $(NAME) $(SRCS)
 
 .PHONY:	all clean fclean re
